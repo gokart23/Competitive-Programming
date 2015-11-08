@@ -1,0 +1,62 @@
+reverse.cpp:3:0: warning: "inline" redefined [enabled by default]
+reverse.cpp:2:0: note: this is the location of the previous definition
+reverse.cpp: In function 'void putchar_unlocked()':
+reverse.cpp:11:1: error: too few arguments to function 'int putchar(int)'
+In file included from c:\program files (x86)\codeblocks\mingw\bin\../lib/gcc/mingw32/4.7.1/include/c++/cstdio:44:0,
+                 from c:\program files (x86)\codeblocks\mingw\bin\../lib/gcc/mingw32/4.7.1/include/c++/mingw32/bits/stdc++.h:47,
+                 from reverse.cpp:1:
+c:\program files (x86)\codeblocks\mingw\bin\../lib/gcc/mingw32/4.7.1/../../../../include/stdio.h:393:42: note: declared here
+reverse.cpp:11:1: error: return-statement with a value, in function returning 'void' [-fpermissive]
+reverse.cpp: In function 'int fast_scan()':
+reverse.cpp:13:29: error: 'getchar_unlocked' was not declared in this scope
+reverse.cpp: In function 'void putchar_unlocked()':
+reverse.cpp:23:1: error: redefinition of 'void putchar_unlocked()'
+reverse.cpp:11:1: error: 'void putchar_unlocked()' previously defined here
+reverse.cpp:23:1: error: too few arguments to function 'int putchar(int)'
+In file included from c:\program files (x86)\codeblocks\mingw\bin\../lib/gcc/mingw32/4.7.1/include/c++/cstdio:44:0,
+                 from c:\program files (x86)\codeblocks\mingw\bin\../lib/gcc/mingw32/4.7.1/include/c++/mingw32/bits/stdc++.h:47,
+                 from reverse.cpp:1:
+c:\program files (x86)\codeblocks\mingw\bin\../lib/gcc/mingw32/4.7.1/../../../../include/stdio.h:393:42: note: declared here
+reverse.cpp:23:1: error: return-statement with a value, in function returning 'void' [-fpermissive]
+reverse.cpp: In function 'void fast_print(int)':
+reverse.cpp:27:29: error: too many arguments to function 'void putchar_unlocked()'
+reverse.cpp:11:1: note: declared here
+reverse.cpp:31:29: error: too many arguments to function 'void putchar_unlocked()'
+reverse.cpp:11:1: note: declared here
+reverse.cpp:38:42: error: too many arguments to function 'void putchar_unlocked()'
+reverse.cpp:11:1: note: declared here
+reverse.cpp:39:26: error: too many arguments to function 'void putchar_unlocked()'
+reverse.cpp:11:1: note: declared here
+reverse.cpp: In function 'void putchar_unlocked()':
+reverse.cpp:43:1: error: redefinition of 'void putchar_unlocked()'
+reverse.cpp:11:1: error: 'void putchar_unlocked()' previously defined here
+reverse.cpp:43:1: error: too few arguments to function 'int putchar(int)'
+In file included from c:\program files (x86)\codeblocks\mingw\bin\../lib/gcc/mingw32/4.7.1/include/c++/cstdio:44:0,
+                 from c:\program files (x86)\codeblocks\mingw\bin\../lib/gcc/mingw32/4.7.1/include/c++/mingw32/bits/stdc++.h:47,
+                 from reverse.cpp:1:
+c:\program files (x86)\codeblocks\mingw\bin\../lib/gcc/mingw32/4.7.1/../../../../include/stdio.h:393:42: note: declared here
+reverse.cpp:43:1: error: return-statement with a value, in function returning 'void' [-fpermissive]
+reverse.cpp: In function 'void putchar_unlocked()':
+reverse.cpp:60:1: error: redefinition of 'void putchar_unlocked()'
+reverse.cpp:11:1: error: 'void putchar_unlocked()' previously defined here
+reverse.cpp:60:1: error: too few arguments to function 'int putchar(int)'
+In file included from c:\program files (x86)\codeblocks\mingw\bin\../lib/gcc/mingw32/4.7.1/include/c++/cstdio:44:0,
+                 from c:\program files (x86)\codeblocks\mingw\bin\../lib/gcc/mingw32/4.7.1/include/c++/mingw32/bits/stdc++.h:47,
+                 from reverse.cpp:1:
+c:\program files (x86)\codeblocks\mingw\bin\../lib/gcc/mingw32/4.7.1/../../../../include/stdio.h:393:42: note: declared here
+reverse.cpp:60:1: error: return-statement with a value, in function returning 'void' [-fpermissive]
+reverse.cpp: In function 'int main()':
+reverse.cpp:104:25: error: no matching function for call to 'std::list<EdgeTag>::push_back(ulint&)'
+reverse.cpp:104:25: note: candidate is:
+In file included from c:\program files (x86)\codeblocks\mingw\bin\../lib/gcc/mingw32/4.7.1/include/c++/list:64:0,
+                 from c:\program files (x86)\codeblocks\mingw\bin\../lib/gcc/mingw32/4.7.1/include/c++/mingw32/bits/stdc++.h:79,
+                 from reverse.cpp:1:
+c:\program files (x86)\codeblocks\mingw\bin\../lib/gcc/mingw32/4.7.1/include/c++/bits/stl_list.h:1024:7: note: void std::list<_Tp, _Alloc>::push_back(const value_type&) [with _Tp = EdgeTag; _Alloc = std::allocator<EdgeTag>; std::list<_Tp, _Alloc>::value_type = EdgeTag]
+c:\program files (x86)\codeblocks\mingw\bin\../lib/gcc/mingw32/4.7.1/include/c++/bits/stl_list.h:1024:7: note:   no known conversion for argument 1 from 'ulint {aka long long unsigned int}' to 'const value_type& {aka const EdgeTag&}'
+reverse.cpp:107:25: error: no matching function for call to 'std::list<EdgeTag>::push_back(ulint&)'
+reverse.cpp:107:25: note: candidate is:
+In file included from c:\program files (x86)\codeblocks\mingw\bin\../lib/gcc/mingw32/4.7.1/include/c++/list:64:0,
+                 from c:\program files (x86)\codeblocks\mingw\bin\../lib/gcc/mingw32/4.7.1/include/c++/mingw32/bits/stdc++.h:79,
+                 from reverse.cpp:1:
+c:\program files (x86)\codeblocks\mingw\bin\../lib/gcc/mingw32/4.7.1/include/c++/bits/stl_list.h:1024:7: note: void std::list<_Tp, _Alloc>::push_back(const value_type&) [with _Tp = EdgeTag; _Alloc = std::allocator<EdgeTag>; std::list<_Tp, _Alloc>::value_type = EdgeTag]
+c:\program files (x86)\codeblocks\mingw\bin\../lib/gcc/mingw32/4.7.1/include/c++/bits/stl_list.h:1024:7: note:   no known conversion for argument 1 from 'ulint {aka long long unsigned int}' to 'const value_type& {aka const EdgeTag&}'

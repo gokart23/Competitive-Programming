@@ -1,0 +1,4 @@
+use standard formulae :p
+
+n*n+1 / 2
+n*n+1 * 2n+1 / 6

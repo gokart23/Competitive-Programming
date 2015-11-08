@@ -1,0 +1,7 @@
+#Files
+*.pdf
+*.exe
+
+#Directories
+CP/**/*
+trial/**/*

@@ -1,0 +1,3 @@
+Very trivial problem
+
+2^4 * 3^2 * 5 * 7 * 11 * 13 * 17 * 19 ( Highest power of all prime factors)

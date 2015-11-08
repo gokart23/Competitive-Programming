@@ -1,0 +1,4 @@
+Quadratic Sieve for fast prime factorization
+Dickson's method for generating Pythagorean triplets(Prob No. 9)
+Sieve of Eratosthenes for finding out prime numbers under a given limit (search around Prob no. 6)
+Sieve of Atkin for finding primes (not implemented yet)
