@@ -19,7 +19,8 @@ using namespace std;
 #define P(i) printf("%d\n",i)
 #define MOD 1000000007
 #define gc getchar_unlocked
-#define MAX (lint)(1e5+1)
+#define pc putchar_unlocked
+#define MAX 401
 
 void scanint(lint &x)
 {
@@ -46,48 +47,68 @@ inline void Print_f (long long n)
     puts(&buffer[index+1]);
 }
 
-int main()
-{	
-	bitset<MAX> nums;
-	vector<int> primes;
-	nums[0]=1, nums[1]=1;
-	FOR(i, 1, MAX)
+bool isGreater(char a, char b)
+{
+	if(b == '(')
+		return true;
+	switch(a)
 	{
-		if(!nums[i])
-		{
-			primes.push_back(i);
-			for(lint j = i<<1; j < MAX; j+=i)
-				nums[j] = 1;
-		}
+		case '^':
+			return true;
+		case '/':
+			if(b == '^') return false;
+			else return true;
+		case '*':
+			if(b == '^' || b == '/') return false;
+			else return true;
+		case '-':
+			if(b == '^' || b == '/' || b == '*') return false;
+			else return true;
+		case '+':
+			return false;
 	}
+}
 
-	lint t=0, m=0, n=0;
-	scanint(t);
-
+int main()
+{
+	lint t=0; scanint(t);
+	char expr[MAX];
+	stack<char> expression;
 	while(t--)
 	{
-		scanint(m), scanint(n);
-		if(n < MAX)
+		assert(expression.empty());
+		expression.push('(');
+		gets(expr);
+		for(int i = 0; expr[i] != '\0'; i++)
 		{
-			FOR(i, m, n+1) if(!nums[i])	Print_f(i);
-		}
-		else
-		{
-			vector<bool> range(n-m+1, 0);
-			for(lint i = 0; i < primes.size(); i++)
+			switch(expr[i])
 			{
-				lint lower = primes[i]*(m/primes[i]);				
-				if(lower < m)
-					lower += primes[i];
-				for(lint j = lower; j <= n; j += primes[i])
-					range[j-m] = 1;
+				case ')':
+					for(;expression.top() != '(';expression.pop())
+						pc(expression.top());
+					expression.pop();
+					break;
+				case '(':
+				case '^':
+					expression.push(expr[i]);
+					break;
+				case '/':
+				case '*':
+				case '-':
+				case '+':
+					for(;!isGreater(expr[i], expression.top());expression.pop())
+						pc(expression.top());
+					expression.push(expr[i]);
+					break;
+				default:
+					pc(expr[i]);
+					break;
 			}
-			FOR(i, 0, n-m+1)
-				if(!range[i])
-					Print_f(m+i);
 		}
-        putchar_unlocked('\n');
-	}	
-	
+		for(;!expression.empty();expression.pop())
+			if(expression.top() != '(')
+				pc(expression.top());
+		pc('\n');
+	}
 	return 0;
 }
