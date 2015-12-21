@@ -63,7 +63,7 @@ int main()
 		{
 			while((high-low) != 1)
 			{
-				assert(high != low);
+				// assert(high != low);
 				//Predicate: Can all cows be assigned to stalls, if the min dist b/n 2 cows is at least x?
 				mid = low + (high-low)/2;
 				lint c_sat=1, prev=stalls.front();
