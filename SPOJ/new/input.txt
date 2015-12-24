@@ -1,11 +1,4 @@
-long_and_mnemonic_identifier
-anotherExample
-i
-bad_Style
-javaIdentifier
-longAndMnemonicIdentifier
-name
-nEERC
-c_identifier
-long_and_mnemonic_identifier
-name
+1
+10 110 2
+1 1
+30 50
