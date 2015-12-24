@@ -1,0 +1,2 @@
+SPOJ: AGGRCOW: New way of thinking about Binary Search
+SPOJ: JAVAC: Corner cases!
