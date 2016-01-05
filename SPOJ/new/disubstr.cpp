@@ -132,7 +132,7 @@ int main()
                 }                
             }
             FOR(i, 0, n)
-                printf("%s:%lld\n", inp+O[i], LCP[O[i]]);
+                printf("%lld - O[%lld]:%lld %s:%lld\n", i, i, O[i], inp+O[i], LCP[O[i]]);
             FOR(i, 0, n)
                 res += (n-i-LCP[i]);
             Print_f(res);
