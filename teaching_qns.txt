@@ -1,2 +1,9 @@
 SPOJ: AGGRCOW: New way of thinking about Binary Search
 SPOJ: JAVAC: Corner cases!
+
+Topics (within my limited knowledge)
+PRIME1: Segmented Sieve
+COMDIV: Efficient prime factorization
+
+Tips:
+1. Use std::__gcd(n,k) to compute GCD
