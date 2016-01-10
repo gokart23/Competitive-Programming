@@ -11,6 +11,7 @@ using namespace std;
 #define ci(i) cin>>i
 #define co(i) cout<<i<<endl
 #define FOR(i,j,n) for(lint i=j;i<n;i++)
+#define FORR(i,j,n) for(lint i=j;i>=n;i--)
 #define pb push_back
 #define s(v) v.size()
 #define S(i) scanf("%d",&i)
@@ -19,8 +20,8 @@ using namespace std;
 #define P(i) printf("%d\n",i)
 #define MOD 1000000007
 #define gc getchar
-#define MAX 202
-#define INF 0x1ffffff
+#define MAX 205
+#define INF 0x1fffffff
 
 void scanint(lint &x)
 {
@@ -49,21 +50,51 @@ inline void Print_f (long long n)
 
 int main()
 {
-	lint n=0, vals[MAX], min=0, max=0;
+	lint n=0, vals[MAX];
 	vector< vector< vector<lint> > > dp;
+	vals[0] = -INF;
 	scanint(n);
 	while(n != -1)
 	{
-		dp.resize(n);
-		FOR(i, 0, n) scanint(vals[i]), dp[i].resize(n);		
-		for(lint i = n; i>0; i--)
+		if(n == 1)
+			scanint(vals[1]),Print_f(0); 
+		else
 		{
-			FOR(j, 0, i) FOR(k, 0, i)
+			dp.resize(n+2);
+			FOR(i, 1, n+1) scanint(vals[i]), dp[i].resize(n+2);
+			vals[n+1] = INF;		
+			FOR(j, 0, n)
 			{
-				dp[i][j].pb(i==n?0:dp[i+1][j][k]);
-				if(vals[j] > vals[i]) dp[i][j][k] = max(dp[i][j][k], 1+dp[i+1][i][k]);
-				if(vals[k] < vals[i]) dp[i][j][k] = max(dp[i][j][k], 1+dp[i+1][j][i]);
+				dp[n][j].resize(n+2, -INF);
+				FOR(k, 1, n)
+				{
+					if(vals[n] > vals[j] || vals[n] < vals[k])
+						dp[n][j][k]=1;
+					else
+						dp[n][j][k]=0;
+				}
+				dp[n][j][n+1] = 1;
 			}
+			// FOR(i, 1, n) cout<<"-INF,"<<vals[i]<<":"<<vals[n]<<"-"<<dp[n][0][i]<<" "; cout<<dp[n][0][n+1];
+			// FOR(i, 1, n) { cout<<endl; FOR(j, 1, n) cout<<vals[i]<<","<<vals[j]<<":"<<vals[n]<<"-"<<dp[n][i][j]<<" "; cout<<dp[n][i][n+1]; }
+			for(lint i = n-1; i>1; i--)
+			{
+				FOR(j, 0, i)
+				{
+					dp[i][j].resize(n+2, -INF);
+					FOR(k, 1, i)
+					{
+						// cout<<i<<","<<j<<","<<k<<endl;
+						dp[i][j][k] = dp[i+1][j][k];
+						if(vals[i] > vals[j]) dp[i][j][k] = max(dp[i][j][k], 1+dp[i+1][i][k]);
+						if(vals[i] < vals[k]) dp[i][j][k] = max(dp[i][j][k], 1+dp[i+1][j][i]);
+					}
+					dp[i][j][n+1] = max(dp[i+1][j][n+1], 1+dp[i+1][j][i]);
+					if(vals[i] > vals[j]) dp[i][j][n+1] = max(dp[i][j][n+1], 1+dp[i+1][i][n+1]);
+				}
+			}
+			lint res = max(dp[2][0][n+1], max(1+dp[2][1][n+1], 1+dp[2][0][1]));
+			Print_f(n-res);
 		}
 		scanint(n);
 	}
