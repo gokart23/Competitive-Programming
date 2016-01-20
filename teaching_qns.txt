@@ -1,5 +1,6 @@
 SPOJ: AGGRCOW: New way of thinking about Binary Search
 SPOJ: JAVAC: Corner cases!
+SPOJ: MUSKET: Fantastic DP question
 
 Topics (within my limited knowledge)
 PRIME1: Segmented Sieve
