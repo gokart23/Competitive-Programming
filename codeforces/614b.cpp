@@ -14,13 +14,9 @@ using namespace std;
 #define FORR(i,j,n) for(lint i=j;i>=n;i--)
 #define pb push_back
 #define s(v) v.size()
-#define S(i) scanf("%d",&i)
-#define SL(i) scanf("%lld",&i)
-#define PL(i) printf("%lld\n",i)
-#define P(i) printf("%d\n",i)
 #define MOD 1000000007
 #define gc getchar
-#define MAX 102
+#define MAX 100003
 
 void scanint(lint &x)
 {
@@ -48,38 +44,35 @@ inline void Print_f (long long n)
 }
 
 int main()
-{
-	lint t=0, n=0, res=0, idx[MAX];	
-	bool dp[MAX][MAX], vals[MAX][MAX];
-	char tmp;
-	scanint(t);
-	while(t--)
-	{	
-		res=0;
-		scanint(n);
-		FOR(i, 0, n) 
+{	_
+	bool zero_flag=false;
+	lint n=0, exp=0, l=0, i=0; scanint(n);
+	char in[MAX], val[MAX];
+	val[0]='1',val[1]='\0';
+	while(n--)
+	{
+		cin>>in;
+		if(!zero_flag)
 		{
-			FOR(j, 0, n) 
+			l=strlen(in);
+			if(l==1 && in[0] == '0')
+				zero_flag=true;
+			else
 			{
-				tmp=gc();
-				if(tmp == '1')	vals[i][j] = true; else vals[i][j] = false;
-				if(j == (i+1)%n) dp[i][i] = false, dp[i][j] = true;			
+				for(i=(l-1);i>=0;i--)
+					{ if(in[i] != '0') break; else exp++; }
+				if(i || (!i && in[i]!='1')) in[i+1]='\0', strcpy(val, in);						
+				// cout<<exp<<":"<<val<<endl;
 			}
-			tmp=gc();
-		}
-		// FOR(i, 0, n) { cout<<endl; FOR(j, 0, n) cout<<vals[i][j]<<" "; }
-		FOR(l, 2, n) FOR(i, 0, n)
-		{
-			dp[i][(i+l)%n] = false;
-			FOR(j, 1, l) 
-				if( (vals[i][(i+j)%n] || vals[(i+l)%n][(i+j)%n]) && dp[i][(i+j)%n] && dp[(i+j)%n][(i+l)%n] ) 
-					{ dp[i][(i+l)%n] = true; break; }
-		}		
-		// FOR(i, 0, n) { cout<<endl; FOR(j, 0, n) cout<<dp[i][j]<<" "; }
-		FOR(i, 0, n) FOR(j, 0, n)
-			if(vals[i][j] && dp[i][j] && dp[j][i]) { idx[res++] = i; break; }
-		Print_f(res);
-		FOR(i, 0, res) Print_f(idx[i]+1);					
+		}	
 	}
+	if(zero_flag)
+		cout<<"0";
+	else
+	{
+		cout<<val;
+		FOR(i, 0, exp) cout<<"0";
+	}
+	cout<<endl;
 	return 0;
 }
