@@ -1,10 +1,13 @@
 SPOJ: AGGRCOW: New way of thinking about Binary Search
 SPOJ: JAVAC: Corner cases!
 SPOJ: MUSKET: Fantastic DP question
+SPOJ: HISTOGRA: Good stack question
 
 Topics (within my limited knowledge)
 PRIME1: Segmented Sieve
 COMDIV: Efficient prime factorization
+LABYR1: Diameter of a tree!
 
 Tips:
 1. Use std::__gcd(n,k) to compute GCD
+2. Use #include <bits/stdc++.h> instead of including a million different files
