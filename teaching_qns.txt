@@ -8,6 +8,7 @@ PRIME1: Segmented Sieve
 COMDIV: Efficient prime factorization
 LABYR1: Diameter of a tree!
 PARTY: 0/1 Knapsack
+codechef/MTRICK: Fast multiplication
 
 Tips:
 1. Use std::__gcd(n,k) to compute GCD
